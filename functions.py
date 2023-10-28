@@ -16,7 +16,6 @@ import numpy as np
 import cv2
 
 #Function that takes the video capture object from VideoCapture and an image size and returns a tensor that can be fed into the model
-#Function that takes the video capture object from VideoCapture and an image size and returns a tensor that can be fed into the model
 def takePicture(cap, device, size=(224,224)):
 	success,image=cap.read()
 	image = cv2.resize(image,size)
@@ -27,7 +26,7 @@ def takePicture(cap, device, size=(224,224)):
 	image = image.to(device)
 	return image
 
-#Fucntion that takes the image tensor and output and returns a numpy array image that OpenCV can display with labels and bounding boxes
+#Function that takes the image tensor and output and returns a numpy array image that OpenCV can display with labels and bounding boxes
 def drawBoundingBoxes(image, output, categories, threshold=0.5):
 	#Making image tensor compatible with draw_bounding_boxes function
 	image = torch.squeeze(image,1)
