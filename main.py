@@ -33,7 +33,7 @@ if not cap.IsOpened:
 #Infinite loop to keep running unitl the esc key is pressed
 while True:
   #Takes an image from the wecam and return a tensor suitable as an inout for the model
-	image=takePicture(cap,size=(224,224))
+	image=takePicture(cap,size=(224,224),device)
 
   #Running the image throught the neural network
 	output=model(image)[0]
