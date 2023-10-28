@@ -1,7 +1,12 @@
-# Object Detection using Transfer Learning
+# Object Detection using Transfer Learning and Faster RCNN
+## Transfer Learning
+Transfer Learning is a machine learning technique where a model that has already been trained is reused with its various weights and parameters intact to perform a task similar to the one it was trained to do. This helps save computational resources and time by eliminating the need to train models on the same data to perform similar tasks.
 
-Transfer learning is an extremely popular technique where a model that has already been trained extensively on a particular dataset is loaded with its weights and parameters intact for use in various applications. 
+## Faster RCNN
+Faster RCNN is a two shot object detection algorithm. The image is first scanned for the prescence of potential objects and then these potential objects undergo image classification to finally obtain the objects present in an image along with their bounding boxes, labels, masks, and probablitly scores. This particular model is implemented as outlined in this paper https://arxiv.org/abs/1506.01497. 
 
-Here I have used the OpenCV library to take images from a camera device and perform some basic processing on them. I have also made use of PyTorch Deep learning framework to load the pre trained model and to transform the image taken in various ways.
+## PyTorch
+PyTorch is a Deep Learning framework that has become increasingly poopular amongst researchers for its flexibility. Here I have used the built in model for Faster RCNN and a number of transformation functions to convert images to tensors, tensors to images, and perform pre preocessing on the images. PLease not that these transforms are part of the V2 transforms offered from Torchvision and are still in the Beta stage. This will provide a warning when running the program but it has not caused any errors and improves computational efficiency.
 
-The model being used here is Faster RCNN which is a two shot model that locates areas where an object might be and then performs image classifiction on those areas. This model return bounding boxes, labels, masks, and scores for each instance of a detected object which can be used to fine tune the final display.
+## OpenCV
+OpenCV or Open Source Computer Vision is an open source library developed by the intel corporation. It has widespread use in both research and academia. Here it has been used to capture video from the webcam, perform pre processing on the taken images, and to display the output images with bounding boxes and labels.
