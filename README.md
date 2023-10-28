@@ -1,4 +1,4 @@
-# Object Detection using transfer learning
+# Object Detection using Transfer Learning
 
 Transfer learning is an extremely popular technique where a model that has already been trained extensively on a particular dataset is loaded with its weights and parameters intact for use in various applications. 
 
