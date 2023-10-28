@@ -38,7 +38,26 @@ while True:
   #Running the image throught the neural network
 	output=model(image)[0]
 
-  #Take the image and output of the model as inputs and return an image with bounding boxes and labels drawn on it
+	#Calculating FPS using 1/Processing_time formula
+	current_time=time.time()
+	fps=1/(current_time-prev_time)
+	
+	#Rounding off FPS to 2 decimals
+	fps=round(fps,2)
+	
+	#Converting FPS to a string so it can be displayed
+	fps=str(fps)
+	fps="FPS: "+fps
+	#Updating time values
+	prev_time=current_time
+	
+	#Setting a font
+	font=cv2.FONT_HERSHEY_SIMPLEX 
+	
+	#Placing the value for fps on to the screen
+	cv2.putText(img=output_image, text=fps, org=(5,224-5), fontFace=font, fontScale=0.5, color=(0, 0, 255),thickness=1)
+
+  	#Take the image and output of the model as inputs and return an image with bounding boxes and labels drawn on it
 	output_image=drawBoundingBoxes(image,output)
   
 
