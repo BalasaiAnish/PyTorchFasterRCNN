@@ -11,7 +11,6 @@ import cv2
 #Function that takes the video capture object from VideoCapture and an image size and returns a tensor that can be fed into the model
 def takePicture(cap,size=(224,224)):
 	success,image=cap.read()
-	cv2.waitKey(0)
 	image=cv2.resize(image,size)
 	image=torch.from_numpy(image)
 	image=torch.permute(image,(2,0,1))
