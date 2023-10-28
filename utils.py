@@ -9,7 +9,7 @@ from torchvision.transforms import v2
 import cv2
 
 #Function that takes the video capture object from VideoCapture and an image size and returns a tensor that can be fed into the model
-def takePicture(cap,size=(224,224)):
+def takePicture(cap,size=(224,224),device):
 	success,image=cap.read()
 	image=cv2.resize(image,size)
 	image=torch.from_numpy(image)
