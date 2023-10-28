@@ -28,6 +28,8 @@ model.to(device)
 #Opening the webcam to start taking video
 cap=cv2.VideoCapture(0)
 
+if not cap.IsOpened:
+	print('Unable to open wecam, please check your settings')
 #Infinite loop to keep running unitl the esc key is pressed
 while True:
   #Takes an image from the wecam and return a tensor suitable as an inout for the model
@@ -39,14 +41,15 @@ while True:
   #Take the image and output of the model as inputs and return an image with bounding boxes and labels drawn on it
 	output_image=drawBoundingBoxes(image,output)
   
-  #Destroying previously created window
-	cv2.destroyAllWindows()
+
 
   #Displaying new image with labels and bounding boxes
-	cv2.imshow('out',output_image)
+	cv2.imshow('FasterRCNN',output_image)
 
   #Exits the loop if esc key is pressed
   if cv2.waitKey(100)==27:
 		break
 
-  
+#Closing webcam and all created windows
+cap.release()
+cv2.destroyAllWindows() 
