@@ -1,13 +1,17 @@
 #Importing custom functions
 from functions import *
+
 #Importing required libraries
 import torch
 
 import torchvision
+
 #Importing transforms from torchvision
 from torchvision.transforms import v2
+
 #Importing a pre trained model
 from torchvision.models.detection import fasterrcnn_resnet50_fpn, FasterRCNN_ResNet50_FPN_Weights
+
 #Importing a function to draw bounding boxes
 from torchvision.utils import draw_bounding_boxes
 
@@ -42,7 +46,8 @@ prev_time    = 0
 cap=cv2.VideoCapture(0)
 
 if not cap.isOpened:
-	print('Unable to open wecam, please check your settings')
+	print('Unable to open webcam, please check your settings')
+	
 #Infinite loop to keep running unitl the esc key is pressed
 while True:
 	#Takes an image from the wecam and return a tensor suitable as an inout for the model
@@ -53,6 +58,7 @@ while True:
 
 	#Setting value of time after processing
 	current_time = time.time()
+	
 	#Calculating FPS using 1/Processing_time formula and rounding off to 2 decimals
 	fps = 1/(current_time-prev_time)
 	fps = round(fps,2)
