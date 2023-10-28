@@ -15,7 +15,7 @@ import cv2
 
 #Defining custom fucntions for modularity and clarity of code
 #Function that takes the video capture object from VideoCapture and an image size and returns a tensor that can be fed into the model
-def takePicture(cap,size=(224,224),device):
+def takePicture(cap,device,size=(224,224)):
 	success,image=cap.read()
 	image=cv2.resize(image,size)
 	image=torch.from_numpy(image)
@@ -59,7 +59,7 @@ if not cap.IsOpened:
 #Infinite loop to keep running unitl the esc key is pressed
 while True:
   #Takes an image from the wecam and return a tensor suitable as an inout for the model
-	image=takePicture(cap,size=(224,224),device)
+	image=takePicture(cap,,device,size=(224,224))
 
   #Running the image throught the neural network
 	output=model(image)[0]
