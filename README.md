@@ -1,4 +1,5 @@
 # Object Detection using Transfer Learning and Faster RCNN
+
 ## Transfer Learning
 Transfer Learning is a machine learning technique where a model that has already been trained is reused with its various weights and parameters intact to perform a task similar to the one it was trained to do. This helps save computational resources and time by eliminating the need to train models on the same data to perform similar tasks.
 
@@ -10,3 +11,6 @@ PyTorch is a Deep Learning framework that has become increasingly poopular among
 
 ## OpenCV
 OpenCV or Open Source Computer Vision is an open source library developed by the intel corporation. It has widespread use in both research and academia. Here it has been used to capture video from the webcam, perform pre processing on the taken images, and to display the output images with bounding boxes and labels.
+
+## Uses 
+This project was made to demonstrate how to perform transfer learning and apply it in the context of object recognition. For a varety of uses, pre trained models help save time, resources, and are more efficient in terms of computation. These models also don't sacrifice usability as they are extremely felxible and can be adpated to a wide variety of tasks with little to no changes. Completing this project helped me understand the ins and outs of object detecion, image processing, and the Faster RCNN algorithm.
