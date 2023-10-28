@@ -46,7 +46,7 @@ while True:
 	cv2.imshow('out',output_image)
 
   #Exits the loop if esc key is pressed
-  if cv2.waitKey(1)==27:
+  if cv2.waitKey(100)==27:
 		break
 
   
