@@ -50,7 +50,7 @@ if not cap.isOpened:
 	
 #Infinite loop to keep running unitl the esc key is pressed
 while True:
-	#Takes an image from the wecam and return a tensor suitable as an inout for the model
+	#Takes an image from the wecam and return a tensor suitable as an input for the model
 	image = takePicture(cap, device)
 
 	#Running the image throught the neural network
